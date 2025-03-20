@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #abdbe3;
+        }
+        .container{
+            width: 400px;
+            border: 2px solid black; 
+            margin: 30px auto;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: #f0d7d7;
+            text-align: center;
+        }
+
+        .product-img{
+            width: 200px;
+            margin: 0 auto;
+            
+        }
+        .product-quantity{
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+          
+        }
+
+        .btn{
+            width: 30px;
+        }
+
+        .quantity{
+            font-size: xx-large;
+        }
+
+        .btn-buy{
+            border-radius: 10px;
+            padding: 5px 40px;
+            font-size: large;
+        }
+
+        .btn-buy:hover{
+            background-color: black;
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <img src="./pizza.jpeg" class="product-img">
+        <h1>Pizza</h1>
+        <p>
+            Buy 1 Get 3 - Thin n Crispy Non Veg <br>
+₹649 <br>
+Buy 1 Thin n Crispy Non-Veg Pizza <br> and Get 1 Classic Bread Stix, ... read more
+        </p>
+        <div class="product-quantity">
+            <img src="./minus-sign-14.png" class="btn" id="minus" onclick="decrease()"/>
+            <span class="quantity" id="quantity">1</span>
+            <img src="./plus2.webp" class="btn" id="plus"  onclick="increase()"/>
+        </div>
+        <button class="btn-buy">Buy</button>
+    </div>
+
+
+
+    <script>
+
+        const quantityText = document.getElementById("quantity");
+
+        function increase() {
+            let quantity = parseInt(quantityText.innerText);
+            if (quantity<10) {
+                quantityText.innerText = ++quantity;
+            }
+            else{
+                alert('you can only buy 10 product at a time')
+            }
+            
+        }
+        
+
+        function decrease() {
+            let quantity = parseInt(quantityText.innerText);
+            if (quantity>1) {
+                quantityText.innerText = --quantity;
+            }
+            else{
+                alert('you can not buy less than 1 product')
+            }
+        }
+
+    </script>
+</body>
+</html>
